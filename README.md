@@ -10,8 +10,8 @@ It uses:
 
 * **Arduino Nano** (ATmega328P) as the brain
 * Two **BTS7960** high-current motor drivers (one for each side)
-* Two **12 V 37GB 500 RPM DC gear motors** (one on the left side, one on the right side, each possibly driving 2 wheels)
-* An **HC-05 Bluetooth module** (or USB Serial) for command input
+* Four 12 V 37GB 500 RPM DC gear motors (two on the left side and two on the right side, with each pair driven by one BTS7960 channel)
+* An **HC-05 Bluetooth module** for command input
 * Simple one-character **serial commands** to control motion
 
 The code is written so that:
@@ -44,8 +44,8 @@ All high-level movement (forward, backward, spin, curves) is generated just by c
 * **Controller:** Arduino Nano (ATmega328P, 16 MHz)
 * **Power motor supply:** 12 V for the 37GB 500 RPM gear motors
 * **Motor drivers:** Two BTS7960 (one for left, one for right)
-* **Motors:** 12 V 37GB 500 RPM DC gear motors (one per side)
-* **Communication:** HC-05 Bluetooth module (default baud **9600**) or USB Serial
+* **Motors:** 12 V 37GB 500 RPM DC gear motors (two per side)
+* **Communication:** HC-05 Bluetooth module (default baud **9600**)
 * **Logic supply:** 5 V for Arduino and HC-05 (from regulator or USB)
 
 ### Pin mapping in this firmware
@@ -229,8 +229,8 @@ You normally don’t need to edit this part. Only change it if you understand th
 
    * Connect Arduino Nano PWM pins 10, 11, 9, and 3 to the respective BTS7960 RPWM/LPWM inputs as defined in the code.
    * Connect 12 V supply to the motor power side of the BTS7960 modules.
-   * Connect each 37GB 500 RPM motor to one BTS7960 output.
-   * Connect the HC-05 module to the Arduino Nano’s RX/TX (usually via a suitable voltage divider for RX).
+   * Connect two 37GB 500 RPM motor to one BTS7960 output.
+   * Connect the HC-05 module to the Arduino Nano’s RX/TX.
 
 2. **Upload the firmware:**
 
